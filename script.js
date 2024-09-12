@@ -95,5 +95,6 @@ function jump() {
 
 document.addEventListener('keydown', jump);
 canvas.addEventListener('touchstart', jump);
+document.getElementById('jumpButton').addEventListener('click', jump);
 
 gameLoop();
