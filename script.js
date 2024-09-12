@@ -18,6 +18,7 @@ const pipeWidth = 80; // Wider pipes
 const pipeGap = 200; // Bigger gap
 let frameCount = 0;
 let score = 0;
+const scoreElement = document.getElementById('score');
 
 function drawBird() {
     ctx.drawImage(bird.image, bird.x, bird.y, bird.width, bird.height);
@@ -54,7 +55,12 @@ function updatePipes() {
     if (pipes.length && pipes[0].x < -pipeWidth) {
         pipes.shift();
         score++;
+        updateScore();
     }
+}
+
+function updateScore() {
+    scoreElement.textContent = score;
 }
 
 function checkCollision() {
@@ -72,6 +78,7 @@ function resetGame() {
     bird.velocity = 0;
     pipes.length = 0;
     score = 0;
+    updateScore();
     frameCount = 0;
 }
 
