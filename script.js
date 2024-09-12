@@ -89,8 +89,11 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
 }
 
-document.addEventListener('keydown', () => {
+function jump() {
     bird.velocity = bird.lift;
-});
+}
+
+document.addEventListener('keydown', jump);
+canvas.addEventListener('touchstart', jump);
 
 gameLoop();
