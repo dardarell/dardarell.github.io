@@ -4,8 +4,8 @@ const ctx = canvas.getContext('2d');
 const bird = {
     x: 50,
     y: 150,
-    width: 40,
-    height: 40,
+    width: 60, // Bigger bird
+    height: 60, // Bigger bird
     gravity: 0.6,
     lift: -10, // Smaller jump
     velocity: 0,
@@ -15,7 +15,7 @@ bird.image.src = 'snake_head.jpg'; // Path to your bird image
 
 const pipes = [];
 const pipeWidth = 80; // Wider pipes
-const pipeGap = 150;
+const pipeGap = 200; // Bigger gap
 let frameCount = 0;
 let score = 0;
 
